@@ -1,16 +1,33 @@
 {
-  "name": "lession",
+  "name": "y",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "webpack"
   },
-  "author": "",
+  "author": "dudu",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.37.0",
-    "webpack-cli": "^4.7.0"
+    "autoprefixer": "^9.3.1",
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "node-sass": "^4.10.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.1.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duGraceful/lession.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duGraceful/lession/issues"
+  },
+  "homepage": "https://github.com/duGraceful/lession#readme"
 }
