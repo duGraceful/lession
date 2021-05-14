@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -42,8 +43,16 @@ module.exports = {
             use: {
                 loader: 'file-loader',
             }
-        }, ]
+        }]
     },
+    // plugins可以在webpack运行到某个时刻的时候，帮你做一些事情
+    plugins: [
+        // HtmlWebpackPlugin 会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
+        new HtmlWebpackPlugin({
+            // 以src/index.html为模版，将生成的boundle.js注入到生成的模版文件中
+            template: 'src/index.html'
+        })
+    ],
     output: {
         filename: "bundle.js",
         // 打包文件的位置
