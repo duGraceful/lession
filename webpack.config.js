@@ -26,9 +26,12 @@ module.exports = {
                 {
                     // 将 CSS 转化成 CommonJS 模块
                     loader: 'css-loader',
-                    options: ''
+                    options: {
+                        // 在saas文件里面引入的saas文件也需要走sass-loader、postcss-loader
+                        importLoaders: 2,
+                        modules: true,
+                    }
                 },
-                ,
                 // 将 Sass 编译成 CSS
                 'sass-loader',
                 'postcss-loader'
