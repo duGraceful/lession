@@ -29,14 +29,20 @@ module.exports = {
                     options: {
                         // 在saas文件里面引入的saas文件也需要走sass-loader、postcss-loader
                         importLoaders: 2,
-                        modules: true,
+                        // 模块化css
+                        // modules: true,
                     }
                 },
                 // 将 Sass 编译成 CSS
                 'sass-loader',
                 'postcss-loader'
             ]
-        }]
+        }, {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            use: {
+                loader: 'file-loader',
+            }
+        }, ]
     },
     output: {
         filename: "bundle.js",
