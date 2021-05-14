@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -51,7 +52,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             // 以src/index.html为模版，将生成的boundle.js注入到生成的模版文件中
             template: 'src/index.html'
-        })
+        }),
+        // 打包之前清除dist目录下的文件
+        new CleanWebpackPlugin(['dist']),
     ],
     output: {
         filename: "bundle.js",
