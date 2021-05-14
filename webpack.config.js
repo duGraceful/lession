@@ -5,7 +5,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    entry:'./src/index.js',
+    // 单入口文件
+    // entry:'./src/index.js',
+    // 多入口文件
+    entry: {
+        main: './src/index.js',
+        sub: './src/index.js',
+    },
     module: {
         rules: [{
             test: /\.(png|jpe?g|gif)$/i,
@@ -57,7 +63,9 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
     ],
     output: {
-        filename: "bundle.js",
+        publicPath: 'http://cdn.com.cn',
+        // filename: "bundle.js",
+        filename: "[name].js",
         // 打包文件的位置
         // 绝对路径
         path: path.resolve(__dirname, 'dist')
