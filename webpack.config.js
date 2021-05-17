@@ -11,8 +11,12 @@ module.exports = {
     // devtool: 'cheap-module-source-map',
     devServer: {
         contentBase: './dist',
+        port: 8087,
         // 自动打开浏览器，访问服务器地址
         open: true,
+        proxy: {
+            '/api': 'http://localhost:3000'
+        }
     },
     // 单入口文件
     // entry:'./src/index.js',
@@ -72,7 +76,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
     ],
     output: {
-        // publicPath: 'http://cdn.com.cn',
+        publicPath: '/',
         // filename: "bundle.js",
         filename: "[name].js",
         // 打包文件的位置
