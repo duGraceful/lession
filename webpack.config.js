@@ -5,12 +5,21 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "development",
+    // development 环境打包配置
+    devtool: 'cheap-module-aval-source-map',
+    // // production 打包配置
+    // devtool: 'cheap-module-source-map',
+    devServer: {
+        contentBase: './dist',
+        // 自动打开浏览器，访问服务器地址
+        open: true,
+    },
     // 单入口文件
     // entry:'./src/index.js',
     // 多入口文件
     entry: {
         main: './src/index.js',
-        sub: './src/index.js',
+        // sub: './src/index.js',
     },
     module: {
         rules: [{
@@ -63,7 +72,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
     ],
     output: {
-        publicPath: 'http://cdn.com.cn',
+        // publicPath: 'http://cdn.com.cn',
         // filename: "bundle.js",
         filename: "[name].js",
         // 打包文件的位置
@@ -71,3 +80,5 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     }
 }
+
+// sourceMap 他是一个映射关系，他可以知道某个文件的某一行出错
