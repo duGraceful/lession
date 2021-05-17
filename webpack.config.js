@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -12,6 +13,8 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         port: 8087,
+        hot: true,
+        hotOnly: true,
         // 自动打开浏览器，访问服务器地址
         open: true,
         proxy: {
@@ -39,7 +42,8 @@ module.exports = {
                 }
             }
         }, {
-            test: /\.s[ac]ss$/i,
+            test: /\.css$/i,
+            // test: /\.s[ac]ss$/i,
             use: [
                 // 执行顺序，从后往前
                 // 将 JS 字符串生成为 style 节点
@@ -74,6 +78,8 @@ module.exports = {
         }),
         // 打包之前清除dist目录下的文件
         new CleanWebpackPlugin(['dist']),
+        // hmr才会生效
+        new webpack.HotModuleReplacementPlugin()
     ],
     output: {
         publicPath: '/',
