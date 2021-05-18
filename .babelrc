@@ -1,9 +1,26 @@
 {
-    "plugins": [["@babel/plugin-transform-runtime", {
-        "absoluteRuntime": false,
-        "corejs": 2,
-        "helpers": true,
-        "regenerator": true,
-        "version": "7.0.0-beta.0"
-    }]]
+    // "plugins": [["@babel/plugin-transform-runtime", {
+    //     "absoluteRuntime": false,
+    //     "corejs": 2,
+    //     "helpers": true,
+    //     "regenerator": true,
+    //     "version": "7.0.0-beta.0"
+    // }]]
+
+
+    //   @babel/preset-env包含了所有es6翻译成es5的翻译规则
+    "presets": [
+        [
+            "@babel/preset-env", 
+            {
+                "targets": {
+                    // 高于67的版本在转es5
+                    "chrome": "67"
+                    },
+                // 按需引入@babel/polyfill
+                "useBuiltIns": "usage"
+            }
+        ],
+        "@babel/preset-react"
+    ]
   }

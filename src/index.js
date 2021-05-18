@@ -46,14 +46,25 @@
 // }
 
 
+// // 补充低版本浏览器
+// // import "@babel/polyfill";
+
+// const arr = [
+    //     new Promise(() => {}),
+    //     new Promise(() => {}),
+    // ]
+    
+    // arr.map(item => {
+        //     console.log(item);
+        // })
 // 补充低版本浏览器
-// import "@babel/polyfill";
+import "@babel/polyfill";
+import React from 'react';
+import ReactDom from 'react-dom';
+class APP extends React.Component {
+    render() {
+        return <div>hello world</div>
+    }
+}
 
-const arr = [
-    new Promise(() => {}),
-    new Promise(() => {}),
-]
-
-arr.map(item => {
-    console.log(item);
-})
+ReactDom.render(<APP />, document.getElementById('root'))
