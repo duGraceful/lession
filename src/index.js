@@ -1,6 +1,3 @@
-// 补充低版本浏览器缺失的函数
-import "@babel/polyfill";
-
 // commonJS 模块引入规范
 // CMD
 // AMD
@@ -48,6 +45,9 @@ import "@babel/polyfill";
 //     document.body.appendChild(div);
 // }
 
+
+// 补充低版本浏览器
+// import "@babel/polyfill";
 
 const arr = [
     new Promise(() => {}),
