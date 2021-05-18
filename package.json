@@ -5,6 +5,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "dev-build": "webpack --config ./build/webpack.dev.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js"
   },
@@ -13,7 +14,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.14.3",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.4",
@@ -22,6 +23,7 @@
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.21",
     "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
     "react": "^17.0.2",
@@ -39,7 +41,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.14.0",
-    "@babel/runtime-corejs2": "^7.14.0"
+    "@babel/runtime-corejs2": "^7.14.0",
+    "core-js": "^3.12.1"
   },
   "repository": {
     "type": "git",
