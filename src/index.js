@@ -1,3 +1,6 @@
+// 补充低版本浏览器缺失的函数
+import "@babel/polyfill";
+
 // commonJS 模块引入规范
 // CMD
 // AMD
@@ -7,21 +10,22 @@
 // import './index.scss';
 
 // import './style.css';
-import counter from './counter.js';
-import number from './number.js';
+// HMR
+// import counter from './counter.js';
+// import number from './number.js';
 
-counter();
-number();
+// counter();
+// number();
 
 
-// 如果开启了hmr功能
-if(module.hot) {
-    // 如果nubber发生了变化，就执行后面的函数
-    module.hot.accept('./number', () => {
-        document.body.removeChild(document.getElementById('number'))
-        number();
-    })
-}
+// // 如果开启了hmr功能
+// if(module.hot) {
+//     // 如果nubber发生了变化，就执行后面的函数
+//     module.hot.accept('./number', () => {
+//         document.body.removeChild(document.getElementById('number'))
+//         number();
+//     })
+// }
 
 
 // createAvator();
@@ -43,3 +47,13 @@ if(module.hot) {
 //     div.innerHTML = 'item';
 //     document.body.appendChild(div);
 // }
+
+
+const arr = [
+    new Promise(() => {}),
+    new Promise(() => {}),
+]
+
+arr.map(item => {
+    console.log(item);
+})

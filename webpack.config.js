@@ -29,7 +29,26 @@ module.exports = {
         // sub: './src/index.js',
     },
     module: {
-        rules: [{
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    //   @babel/preset-env包含了所有es6翻译成es5的翻译规则
+                    presets: [['@babel/preset-env', {
+                        targets: {
+                            // 高于67的版本在转es5
+                            chrome: "67",
+                          },
+                        // 按需引入@babel/polyfill
+                        useBuiltIns: "usage"
+                    }]]
+                  }
+                }
+              },
+              {
             test: /\.(png|jpe?g|gif)$/i,
             use: {
                 loader: 'url-loader',
