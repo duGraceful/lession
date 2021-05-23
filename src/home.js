@@ -51,30 +51,15 @@
 // }
 
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-import axios from 'axios';
-import { BrowserRouter, Route } from 'react-router-dom';
-import List from './list';
-import Home from './home';
 
-export class App extends Component {
-  componentDidMount() {
-    // http://www.dell-lee.com
-    axios.get('/react/api/header.json')
-      .then((res) => {
-        // eslint-disable-next-line no-console
-        console.log('res', res);
-      });
-  }
-
+export class Home extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Route path="/" exact component={Home} />
-        <Route path="/list" component={List} />
-      </BrowserRouter>
+      <div>
+        Home
+      </div>
     );
   }
 }
 
-ReactDom.render(<App />, document.getElementById('root'));
+export default Home;
