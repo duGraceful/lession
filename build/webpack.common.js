@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 // development默认没有trees哈king
 module.exports = {
@@ -60,10 +60,10 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        new webpack.ProvidePlugin({
-            // 如果有一个模块用了$，就在使用$模块自动引入jquery
-            $: 'jquery'
-        })
+        // new webpack.ProvidePlugin({
+        //     // 如果有一个模块用了$，就在使用$模块自动引入jquery
+        //     $: 'jquery'
+        // })
     ],
     performance: { 
         hints: false

@@ -36,6 +36,17 @@
 // }
 
 
-import './style.css';
-import './style1.css';
-console.log('hahahha dudud ya');
+// import './style.css';
+// import './style1.css';
+
+if('serviceWorker' in navigator) {
+    console.log('hahudud ya');
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(registeration => {
+            console.log('registeration');
+        }).catch(error => {
+            console.log('error');
+        })
+    })
+}
