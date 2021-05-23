@@ -31,7 +31,15 @@ const devConfig = {
         // 每次重启，自动打开浏览器，访问服务器地址
         open: true,
         proxy: {
-            '/api': 'http://localhost:3000'
+            // '/react/api': 'http://www.dell-lee.com'
+            '/react/api': {
+                target: 'http://www.dell-lee.com',
+                // https配置的转发
+                secure: false,
+                pathRewrite: {
+                    'header.json': 'demo.json'
+                }
+            }
         }
     },
 

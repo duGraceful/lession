@@ -39,14 +39,39 @@
 // import './style.css';
 // import './style1.css';
 
-if('serviceWorker' in navigator) {
-    console.log('hahudud ya');
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-        .then(registeration => {
-            console.log('registeration');
-        }).catch(error => {
-            console.log('error');
+// if('serviceWorker' in navigator) {
+//     console.log('hahudud ya');
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('./service-worker.js')
+//         .then(registeration => {
+//             console.log('registeration');
+//         }).catch(error => {
+//             console.log('error');
+//         })
+//     })
+// }
+
+import axios from 'axios';
+import React, { Component } from 'react'
+import ReactDom from 'react-dom';
+
+
+
+export class App extends Component {
+    componentDidMount() {
+        // http://www.dell-lee.com
+        axios.get('/react/api/header.json')
+        .then((res) => {
+            console.log('res', res);
         })
-    })
+    }
+    render() {
+        return (
+            <div>
+                hello word
+            </div>
+        )
+    }
 }
+
+ReactDom.render(<App />, document.getElementById('root'))
