@@ -23,5 +23,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'import/no-named-as-default': 0,
     'import/prefer-default-export': 0,
+    'import/extensions': 0,
+    'no-dupe-keys': 0,
   },
 };

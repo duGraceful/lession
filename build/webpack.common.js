@@ -12,11 +12,17 @@ module.exports = {
     // jquery: './src/jquery.js',
     main: './src/index.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      Src: path.resolve(__dirname, '../src'),
+    },
+  },
   // module：当我们遇到文件类型引入的时候，他都是一个模块，模块打包的规则
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.m?jsx?$/,
         // 忽略打包的模块
         exclude: /node_modules/,
         use: [{
@@ -45,12 +51,12 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        use: {
-          loader: 'file-loader',
-        },
-      },
+    //   {
+    //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    //     use: {
+    //       loader: 'file-loader',
+    //     },
+    //   },
     ],
   },
   stats: {
